@@ -1,0 +1,27 @@
+import java.util.*;
+import java.io.*;
+public class Encrypting {
+    public static void main(String[] args){
+        try {
+            System.out.print("Hello, Enter the file directory of the file ");
+            Scanner input = new Scanner(System.in);
+            String directory = input.nextLine();
+            File file1 = new File(directory);
+            Scanner myReader = new Scanner(file1);
+            int key=10;
+            //String a = myReader.nextLine();
+            while (myReader.hasNextLine()) {
+                String info = myReader.nextLine();;
+                System.out.println(info+"\n");
+                char[] username = info.toCharArray();
+                for (char c : username) {
+                    c +=key;
+                    System.out.print(c);
+                }System.out.println();
+
+            }
+        }catch(Exception e) {
+            System.out.println("An error occured");
+        }
+    }
+}
